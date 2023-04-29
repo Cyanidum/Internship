@@ -1,0 +1,135 @@
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}em;
+}
+@function rem($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}rem;
+}
+
+$blue: #5095EC;
+$black: #505050;
+$dark-grey: #8F8F8F;
+$grey: #D3D8DE;
+$background: #F1F1F1;
+$white: #FFFFFF;
+$bg-2: #FAFAFA;
+
+.main{
+	&__accordion{
+		margin-top: em(32);
+		&:nth-child(3){
+			margin-top: 0;
+		}
+	}
+	&__accordion_container{
+		display: flex;
+		flex-direction: column;
+	}
+	&__accordion_button{
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		justify-content: space-between;
+		align-items: center;
+		padding: em(25) em(44);
+		background-color: $white;
+		cursor: pointer;
+		p{
+			font-family: 'Roboto-Regular';
+			font-size: em(21);
+		}
+	}
+	&__accordion_marks{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	&__accordion_icon{
+		width: em(30);
+		height: em(30);
+		margin-right: em(10);
+		svg{
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	&__tweet_container{
+		max-height: 0;
+		overflow: hidden;
+		transition: .5s ease;
+		margin-bottom: em(32);
+	}
+	&__accordion_text{
+		font-family: 'Roboto-Regular';
+		font-size: em(24);
+		margin-right: em(17);
+		line-height: 1.3;
+	}
+	&__accordion_bird{
+		width: em(30);
+		height: em(30);
+		transition: .3s ease-in-out;
+		svg{
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+}
+@media (max-width: 1000px) {
+	.main__accordion_button{
+		p{
+			font-size: em(27);
+		}
+	}
+	.main__accordion_icon{
+		width: em(40);
+		height: em(40);
+	}
+}
+@media (max-width: 912px) {
+	.main__accordion_button{
+		p{
+			font-size: em(36);
+		}
+	}
+	.main__accordion_icon{
+		width: em(50);
+		height: em(50);
+	}
+}
+@media (max-width: 800px) {
+	.main__accordion_button{
+		p{
+			font-size: em(27);
+		}
+	}
+	.main__accordion_icon{
+		width: em(40);
+		height: em(40);
+	}
+}
+@media (max-width: 600px){
+	.main__accordion_button{
+		p{
+			font-size: em(33);
+		}
+	}
+	.main__accordion_icon{
+		width: em(40);
+		height: em(40);
+	}
+}
+@media (max-width: 500px){
+	.main__accordion_button{
+		p{
+			font-size: em(43);
+		}
+	}
+	.main__accordion_icon{
+		width: em(80);
+		height: em(80);
+	}
+}

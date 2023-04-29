@@ -1,0 +1,268 @@
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}em;
+}
+@function rem($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}rem;
+}
+
+$blue: #5095EC;
+$black: #505050;
+$dark-grey: #8F8F8F;
+$grey: #D3D8DE;
+$background: #F1F1F1;
+$white: #FFFFFF;
+$bg-2: #FAFAFA;
+
+.main{
+	position: relative;
+	display: flex;
+	height: 80vh;
+	flex-direction: row;
+	background-color: $background;
+	transition: .3s ease-in-out;
+	&__content{
+		padding: em(40);
+	}
+	&__tweet{
+		padding: em(73) em(44) em(44);
+		display: flex;
+		flex-direction: column;
+		background-color: #fff;
+	}
+	&__art{
+		width: em(1306);
+		height: em(554);
+		img{
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+	&__comments{
+		margin-top: em(17);
+	}
+	&__author{
+		margin-left: em(28);
+		position: relative;
+		font-family: 'Roboto-Regular';
+		font-size: em(17);
+		line-height: 1.3;
+		padding-left: em(10);
+		letter-spacing: em(0.5);
+		color: $black;
+		span{
+			color: $blue;
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			background-image: url(../img/talk-icon.svg);
+			background-repeat: no-repeat;
+			width: em(31);
+			height: em(31);
+			background-size: cover;
+			top: 50%;
+			left: em(-30);
+			transform: translateY(-50%);
+		}
+	}
+	&__author_text{
+		margin-top: em(10);
+		border-left: em(2) solid $grey;
+		padding-left: em(8);
+		margin-top: em(24);
+		letter-spacing: em(0.5);
+	}
+	&__author_text_content{
+		font-family: 'Roboto-Regular';
+		font-size: em(17);
+		color: $black;
+		line-height: 1.3;
+	}
+	&__author_text_date{
+		font-family: 'Roboto-Regular';
+		font-size: em(17);
+		margin-top: em(20);
+		color: $dark-grey;
+		span{
+			font-style: italic;
+		}
+	}
+	&__checked{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	&__content_container{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-top: em(22);
+		svg{
+			width: em(30);
+			height: em(30);
+		}
+	}
+	&__checked_text{
+		position: relative;
+		left: em(9);
+		font-family: 'Roboto-Regular';
+		font-size: em(20);
+		
+	}
+	&__comments_style{
+		margin-left: em(51);
+	}
+	
+}
+@media (max-width: 1000px){
+	.main__author{
+		font-size: em(27);
+	}
+	.main__author_text_content{
+		font-size: em(27);
+	}
+	.main__content_container{
+		svg{
+			width: em(40);
+			height: em(40);
+		}
+	}
+	.main__checked_text{
+		font-size: em(26);
+	}
+	.main__author_text_date{
+		font-size: em(25);
+	}
+}
+@media (max-width: 912px){
+	.main__author{
+		font-size: em(36);
+	}
+	.main__author_text_content{
+		font-size: em(35);
+	}
+	.main__content_container{
+		svg{
+			width: em(70);
+			height: em(70);
+		}
+	}
+	.main__checked_text{
+		font-size: em(33);
+	}
+	.main__author_text_date{
+		font-size: em(33);
+	}
+}
+@media (max-width: 800px){
+	.main__author{
+		font-size: em(24);
+	}
+	.main__author_text_content{
+		font-size: em(22);
+	}
+	.main__author_text_date{
+		font-size: em(20);
+	}
+	.main__content_container{
+		svg{
+			width: em(36);
+			height: em(36);
+		}
+	}
+	.main__checked_text{
+		font-size: em(22);
+	}
+}
+@media (max-width: 700px){
+	.main__author{
+		font-size: em(28);
+	}
+	.main__author_text_content{
+		font-size: em(27);
+	}
+	.main__author_text_date{
+		font-size: em(24);
+	}
+	.main__content_container{
+		svg{
+			width: em(40);
+			height: em(40);
+		}
+	}
+	.main__checked_text{
+		font-size: em(26);
+	}
+}
+@media (max-width: 600px){
+	.main{
+		width: 100%;
+	}
+	.main__art{
+		width: 100%;
+		height: 100%;
+	}
+	.main__author{
+		font-size: em(34);
+	}
+	.main__author_text_content{
+		font-size: em(34);
+	}
+	.main__author_text_date{
+		font-size: em(30);
+	}
+	.main__content_container{
+		svg{
+			width: em(50);
+			height: em(50);
+		}
+	}
+	.main__checked_text{
+		font-size: em(30);
+	}
+	
+}
+@media (max-width: 500px){
+	.main__author{
+		font-size: em(43);
+	}
+	.main__author_text_content{
+		font-size: em(43);
+	}
+	.main__author_text_date{
+		font-size: em(45);
+	}
+	.main__content_container{
+		svg{
+			width: em(75);
+			height: em(75);
+		}
+	}
+	.main__checked_text{
+		font-size: em(39);
+	}
+	
+}
+@media (max-width: 400px){
+	.main__author{
+		font-size: em(47);
+	}
+	.main__author_text_content{
+		font-size: em(47);
+	}
+	.main__author_text_date{
+		font-size: em(45);
+	}
+	.main__content_container{
+		svg{
+			width: em(65);
+			height: em(65);
+		}
+	}
+	.main__checked_text{
+		font-size: em(45);
+	}
+	
+}

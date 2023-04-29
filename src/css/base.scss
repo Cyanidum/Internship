@@ -1,0 +1,23 @@
+$browser-context: 16;
+
+@function em($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}em;
+}
+@function rem($pixels, $context: $browser-context) {
+	@return #{$pixels/$context}rem;
+}
+$background: #F1F1F1;
+
+.border_container {
+	position: relative;
+	margin: 0 auto;
+}
+body{
+	background-color: $background;
+	
+}
+
+.wrapper{
+	overflow-x: hidden;
+	height: 100vh;
+}

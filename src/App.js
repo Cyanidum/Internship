@@ -44,6 +44,7 @@ function App() {
   return (
     <Router>
       <Header />
+      <Main />
       <Switch>
         <Route exact path={'/home'}>
           <Main />

@@ -196,6 +196,7 @@ $bg-2: #FAFAFA;
 	&__sidebar_open{
 		position: absolute;
 		width: em(130);
+		cursor: pointer;
 		display: none;
 		flex-direction: row;
 		align-items: center;
